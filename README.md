@@ -43,7 +43,6 @@
 قدیمی:
 
 ```java
-// قبل از Java 8
 Button button = new Button();
 button.setOnAction(new EventHandler<ActionEvent>() {
     public void handle(ActionEvent event) {
@@ -56,7 +55,6 @@ button.setOnAction(new EventHandler<ActionEvent>() {
 جدید:
 
 ```java
-// در Java 8
 button.setOnAction(event -> System.out.println("Button clicked"));
 ```
 
@@ -69,7 +67,6 @@ button.setOnAction(event -> System.out.println("Button clicked"));
 قدیمی:
 
 ```java
-// قبل از Java 8
 List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
 for (Integer number : numbers) {
     if (number % 2 == 0) {
@@ -82,7 +79,6 @@ for (Integer number : numbers) {
 جدید:
 
 ```java
-// در Java 8
 List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
 numbers.stream()
        .filter(number -> number % 2 == 0)
@@ -99,7 +95,6 @@ numbers.stream()
 قدیمی:
 
 ```java
-// قبل از Java 8
 interface MyInterface {
     void method1();
     void method2();
@@ -121,7 +116,6 @@ class MyClass implements MyInterface {
 جدید:
 
 ```java
-// در Java 8
 interface MyInterface {
     void method1();
     void method2();
@@ -153,7 +147,6 @@ class MyClass implements MyInterface {
 قدیمی:
 
 ```java
-// قبل از Java 8
 interface MyFunctionalInterface {
     void myMethod();
 }
@@ -167,7 +160,6 @@ interface MyFunctionalInterface {
 جدید:
 
 ```java
-// در Java 8
 @FunctionalInterface
 interface MyFunctionalInterface {
     void myMethod();
@@ -191,7 +183,6 @@ interface MyFunctionalInterface {
 قدیمی:
 
 ```java
-// قبل از Java 8
 String name = getName();
 if (name != null) {
     System.out.println(name.length());
@@ -205,7 +196,6 @@ if (name != null) {
 جدید:
 
 ```java
-// در Java 8
 Optional<String> optionalName = Optional.ofNullable(getName());
 optionalName.ifPresent(name -> System.out.println(name.length()));
 ```
@@ -220,14 +210,12 @@ optionalName.ifPresent(name -> System.out.println(name.length()));
 قدیمی:
 
 ```java
-// قبل از Java 8
 Date date = new Date();
 ```
 
 جدید:
 
 ```java
-// در Java 8
 LocalDate date = LocalDate.now();
 ```
 
@@ -242,7 +230,6 @@ LocalDate date = LocalDate.now();
 قدیمی:
 
 ```java
-// قبل از Java 8
 for (String item : list) {
     System.out.println(item);
 }
@@ -251,7 +238,6 @@ for (String item : list) {
 جدید:
 
 ```java
-// در Java 8
 list.parallelStream().forEach(System.out::println);
 ```
 
@@ -266,7 +252,6 @@ list.parallelStream().forEach(System.out::println);
 قدیمی:
 
 ```java
-// قبل از Java 8
 ExecutorService executor = Executors.newFixedThreadPool(5);
 executor.submit(new Runnable() {
     public void run() {
@@ -278,7 +263,6 @@ executor.submit(new Runnable() {
 جدید:
 
 ```java
-// در Java 8
 CompletableFuture<Void> future = CompletableFuture.runAsync(() -> {
     // کاری را همزمان انجام می‌دهد
 });
@@ -294,7 +278,6 @@ CompletableFuture<Void> future = CompletableFuture.runAsync(() -> {
 قدیمی:
 
 ```java
-// قبل از Java 8
 Context cx = Context.enter();
 try {
     Scriptable scope = cx.initStandardObjects();
@@ -308,7 +291,6 @@ try {
 جدید:
 
 ```java
-// در Java 8
 ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
 engine.eval("print('Hello, World!');");
 ```
@@ -472,21 +454,20 @@ String html = """
 قدیمی:
 
 ```java
+public final class StringBuffer  extends AbstractStringBuilder {...}
 // قبل از Java 17
 // بدون امکان محدود کردن زیرکلاس‌ها
 // و یا تعریف کلاس ها بصورت فاینال برای محدود کردن ارث بری
-public final class StringBuffer  extends AbstractStringBuilder {...}
 ```
 اما با ویژگی Sealed Classes، می‌توانیم زیرکلاس‌های یک کلاس را محدود کنیم:
 
 جدید:
 
 ```java
-// ارث بری فقط برای کلاس های Circle, Rectangle, Triangle
-
 sealed interface Shape permits Circle, Rectangle, Triangle {
     // ...
 }
+// ارث بری فقط برای کلاس های Circle, Rectangle, Triangle
 ```
 
 [برگشت به بالا](#جدول-محتوا)
