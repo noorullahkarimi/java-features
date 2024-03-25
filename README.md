@@ -50,7 +50,6 @@ button.setOnAction(new EventHandler<ActionEvent>() {
         System.out.println("Button clicked");
     }
 });
-
 ```
 با استفاده از عبارت Lambda، می‌توانیم کدها را کوتاه‌تر نماییم:
 
@@ -59,7 +58,6 @@ button.setOnAction(new EventHandler<ActionEvent>() {
 ```java
 // در Java 8
 button.setOnAction(event -> System.out.println("Button clicked"));
-
 ```
 
 [برگشت به بالا](#جدول-محتوا)
@@ -78,8 +76,6 @@ for (Integer number : numbers) {
         System.out.println(number);
     }
 }
-
-
 ```
 با Stream API، می‌توانیم این کار را با استفاده از عبارت‌های فیلتر و مپ به صورت خلاصه‌تر انجام دهیم:
 
@@ -91,7 +87,6 @@ List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
 numbers.stream()
        .filter(number -> number % 2 == 0)
        .forEach(System.out::println);
-
 ```
 
 [برگشت به بالا](#جدول-محتوا)
@@ -119,8 +114,6 @@ class MyClass implements MyInterface {
         // implementation
     }
 }
-
-
 ```
 
 اما با Default Methods، می‌توانیم متدهای پیش‌فرض را به رابط‌ها اضافه کنیم بدون اینکه کد کلاس‌های پیاده‌سازی‌کننده را تغییر دهیم:
@@ -147,7 +140,6 @@ class MyClass implements MyInterface {
         // implementation
     }
 }
-
 ```
 
 [برگشت به بالا](#جدول-محتوا)
@@ -167,7 +159,6 @@ interface MyFunctionalInterface {
 }
 
 // استفاده از یک رابط تابعی جداگانه
-
 ```
 
 با اضافه شدن انوتیشن @FunctionalInterface و اجازه تعریف متدهای default و static در رابط‌ها، می‌توانیم به راحتی رابط‌های تابعی را تعریف کنیم:
@@ -189,7 +180,6 @@ interface MyFunctionalInterface {
         // implementation
     }
 }
-
 ```
 
 [برگشت به بالا](#جدول-محتوا)
@@ -208,7 +198,6 @@ if (name != null) {
 } else {
     System.out.println("Name is null");
 }
-
 ```
 با Optional، می‌توانیم به صورت خلاصه‌تر با مقادیر خالی مقابله کنیم:
 
@@ -219,7 +208,6 @@ if (name != null) {
 // در Java 8
 Optional<String> optionalName = Optional.ofNullable(getName());
 optionalName.ifPresent(name -> System.out.println(name.length()));
-
 ```
 
 [برگشت به بالا](#جدول-محتوا)
@@ -234,7 +222,6 @@ optionalName.ifPresent(name -> System.out.println(name.length()));
 ```java
 // قبل از Java 8
 Date date = new Date();
-
 ```
 
 جدید:
@@ -242,7 +229,6 @@ Date date = new Date();
 ```java
 // در Java 8
 LocalDate date = LocalDate.now();
-
 ```
 
 [برگشت به بالا](#جدول-محتوا)
@@ -260,7 +246,6 @@ LocalDate date = LocalDate.now();
 for (String item : list) {
     System.out.println(item);
 }
-
 ```
 
 جدید:
@@ -268,7 +253,6 @@ for (String item : list) {
 ```java
 // در Java 8
 list.parallelStream().forEach(System.out::println);
-
 ```
 
 [برگشت به بالا](#جدول-محتوا)
@@ -289,7 +273,6 @@ executor.submit(new Runnable() {
         // کاری را همزمان انجام می‌دهد
     }
 });
-
 ```
 
 جدید:
@@ -299,7 +282,6 @@ executor.submit(new Runnable() {
 CompletableFuture<Void> future = CompletableFuture.runAsync(() -> {
     // کاری را همزمان انجام می‌دهد
 });
-
 ```
 
 [برگشت به بالا](#جدول-محتوا)
@@ -320,8 +302,6 @@ try {
 } finally {
     Context.exit();
 }
-
-
 ```
 در جاوا 8، با اضافه شدن Nashorn JavaScript Engine، می‌توانیم به سادگی اسکریپت‌های JavaScript را درون برنامه‌های جاوا اجرا کنیم:
 
@@ -331,7 +311,6 @@ try {
 // در Java 8
 ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
 engine.eval("print('Hello, World!');");
-
 ```
 
 [برگشت به بالا](#جدول-محتوا)
@@ -358,7 +337,6 @@ switch(day) {
     default:
         System.out.println("Invalid day");
 }
-
 ```
 
 جدید:
@@ -371,7 +349,6 @@ switch(day) {
     case 3 -> System.out.println("Tuesday");
     default -> System.out.println("Invalid day");
 }
-
 ```
 
 [برگشت به بالا](#جدول-محتوا)
@@ -413,7 +390,6 @@ if (object instanceof Instrument instrument){
 
 ```java
 ArrayList<String> list = new ArrayList<String>();
-
 ```
 اما با ویژگی Var، می‌توانیم به صورت خودکار نوع داده را تشخیص دهیم:
 
@@ -421,10 +397,7 @@ ArrayList<String> list = new ArrayList<String>();
 جدید:
 
 ```java
-
 var list = new ArrayList<String>();
-
-
 ```
 
 [برگشت به بالا](#جدول-محتوا)
@@ -447,7 +420,6 @@ class Person {
     
     // getters and setters
 }
-
 ```
 اما با ویژگی Record، می‌توانیم به صورت کوتاه‌تر کلاس‌های کمینه‌سازی شده‌ای را ایجاد کنیم:
 
@@ -457,7 +429,6 @@ class Person {
 record Person(String name, int age) {
     // به صورت خودکار متدهای equals و hashCode و toString تولید می‌شوند
 }
-
 ```
 
 [برگشت به بالا](#جدول-محتوا)
@@ -505,7 +476,6 @@ String html = """
 // بدون امکان محدود کردن زیرکلاس‌ها
 // و یا تعریف کلاس ها بصورت فاینال برای محدود کردن ارث بری
 public final class StringBuffer  extends AbstractStringBuilder {...}
-
 ```
 اما با ویژگی Sealed Classes، می‌توانیم زیرکلاس‌های یک کلاس را محدود کنیم:
 
@@ -517,8 +487,6 @@ public final class StringBuffer  extends AbstractStringBuilder {...}
 sealed interface Shape permits Circle, Rectangle, Triangle {
     // ...
 }
-
-
 ```
 
 [برگشت به بالا](#جدول-محتوا)
@@ -535,16 +503,13 @@ List<String> colors = new ArrayList<>();
 colors.add("Red");
 colors.add("Green");
 colors.add("Blue");
-
 ```
 اما با ویژگی of()، می‌توانیم به صورت خلاصه مجموعه‌ها را بسازیم:
 
 جدید:
 
 ```java
-
 List<String> colors = List.of("Red", "Green", "Blue");
-
 ```
 
 [برگشت به بالا](#جدول-محتوا)
@@ -557,9 +522,8 @@ List<String> colors = List.of("Red", "Green", "Blue");
 قدیمی:
 
 ```java
-/String name = null;
+String name = null;
 System.out.println(name.length()); // خطا NullPointerException بدون اطلاعات بیشتر
-
 ```
 اما با ویژگی NullPointerException meaningful، اطلاعات بیشتری در مورد علت خطا نشان داده می‌شود. 
 اصطلاحا کاربر پسند تر شده است.
@@ -569,7 +533,6 @@ System.out.println(name.length()); // خطا NullPointerException بدون اط�
 ```java
 String name = null;
 System.out.println(name.length()); // خطا: NullPointerException: Cannot invoke "String.length()" because "name" is null
-
 ```
 
 [برگشت به بالا](#جدول-محتوا)
