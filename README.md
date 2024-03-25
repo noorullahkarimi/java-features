@@ -13,21 +13,21 @@
   - [مقدمه](#مقدمه)
   - [Lambda Expressions (Java 8)](#Lambda-Expressions)
   - [Stream API (Java 8)](#Stream-API)
-  - [Default Methods](#Default-Methods)
-  - [Functional Interfaces](#Functional-Interfaces)
-  - [Optional](#Optional)
-  - [Date and Time API](#Date-and-Time-API)
-  - [Parallel Streams](#Parallel-Streams)
-  - [CompletableFuture](#CompletableFuture)
-  - [Nashorn JavaScript Engine](#Nashorn-JavaScript-Engine)
-  - [switch](#switch)
-  - [New Instance of](#New-Instance-of)
-  - [Var](#Var)
-  - [Record](#Record)
-  - [Multiline String / Text Blocks](#Multiline-String-/-Text-Blocks)
-  - [Sealed Classes](#Sealed-Classes)
-  - [of() for collections](#of()-for-collections)
-  - [NullPointerException meaningful](#NullPointerException-meaningful)
+  - [Default Methods (Java 8)](#Default-Methods)
+  - [Functional Interfaces (Java 8)](#Functional-Interfaces)
+  - [Optional (Java 8)](#Optional)
+  - [Date and Time API (Java 8)](#Date-and-Time-API)
+  - [Parallel Streams (Java 8)](#Parallel-Streams)
+  - [CompletableFuture (Java 8)](#CompletableFuture)
+  - [Nashorn JavaScript Engine (Java 8)](#Nashorn-JavaScript-Engine)
+  - [switch (Java 12)](#switch)
+  - [New Instance of (Java 10)](#New-Instance-of)
+  - [Var (Java 10)](#Var)
+  - [Record (Java 14)](#Record)
+  - [Multiline String / Text Blocks (Java 15)](#Multiline-String-/-Text-Blocks)
+  - [Sealed Classes (Java 17)](#Sealed-Classes)
+  - [of() for collections (Java 9)](#of()-for-collections)
+  - [NullPointerException meaningful (Java 14)](#NullPointerException-meaningful)
 
 
 
@@ -339,7 +339,7 @@ engine.eval("print('Hello, World!');");
 
 ## switch 
 
-تغییر switch (v12)
+تغییر switch 
 
 قدیمی:
 
@@ -378,7 +378,7 @@ switch(day) {
 
 ## New Instance of 
 
-در ورژن قدیمی مجبور به تغییر casting بودیم.(v10)
+در ورژن قدیمی مجبور به تغییر casting بودیم
 
 قدیمی:
 
@@ -407,7 +407,7 @@ if (object instanceof Instrument instrument){
 
 ## Var 
 
-در نسخه‌های قدیمی‌تر، برای تعریف متغیر نیاز به نوشتن نوع داده بود:(v10)
+در نسخه‌های قدیمی‌تر، برای تعریف متغیر نیاز به نوشتن نوع داده بود
 
 قدیمی:
 
@@ -431,7 +431,7 @@ var list = new ArrayList<String>();
 
 ## Record 
 
-قبل از این ویژگی، برای ساخت یک کلاس ساده باید کد زیادی بنوشتیم:(v14)
+قبل از این ویژگی، برای ساخت یک کلاس ساده باید کد زیادی بنوشتیم
 
 قدیمی:
 
@@ -466,7 +466,7 @@ record Person(String name, int age) {
 ## Multiline String / Text Blocks 
 
 درنسخه های قدیمی کار با رشته ها خیلی راحت نبود. مثلا برای رفتن به خط جدید از کاراکتر (\n)باید استفاده میکردیم.
-که اگر نبود به خط جدید نمی رفت.(v15)
+که اگر نبود به خط جدید نمی رفت
 
 قدیمی:
 
@@ -496,7 +496,7 @@ String html = """
 
 ## Sealed Classes 
 
-در نسخه‌های قدیمی‌تر، کنترل بر روی زیرکلاس‌ها به این شکل ممکن بود:(v17)
+در نسخه‌های قدیمی‌تر، کنترل بر روی زیرکلاس‌ها به این شکل ممکن بود
 
 قدیمی:
 
@@ -525,7 +525,7 @@ sealed interface Shape permits Circle, Rectangle, Triangle {
 
 ## of() for collections 
 
-در نسخه‌های قدیمی‌تر، برای ساخت مجموعه‌ها نیاز به کد طولانی‌تری داشتیم:(v9)
+در نسخه‌های قدیمی‌تر، برای ساخت مجموعه‌ها نیاز به کد طولانی‌تری داشتیم
 
 قدیمی:
 
@@ -552,7 +552,7 @@ List<String> colors = List.of("Red", "Green", "Blue");
 
 ## NullPointerException meaningful 
 
-در نسخه‌های قدیمی‌تر، پیغام خطای NullPointerException خیلی جالب نبود.(v14)
+در نسخه‌های قدیمی‌تر، پیغام خطای NullPointerException خیلی جالب نبود
 
 قدیمی:
 
